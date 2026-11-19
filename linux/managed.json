@@ -8,6 +8,10 @@
   "EdgeAssetDeliveryServiceEnabled": false,
   "ExperimentationAndConfigurationServiceControl": 1,
   "AddressBarTrendingSuggestEnabled": false,
+
+  "SmartScreenEnabled": false,
+  "SmartScreenDnsRequestsEnabled": false,
+  "SmartScreenPuaEnabled": false,
   "CopilotPageContext": false,
   "EdgeEntraCopilotPageContext": false,
   "Microsoft365CopilotChatIconEnabled": false,

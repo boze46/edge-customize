@@ -30,16 +30,18 @@
 	<true/>
 	<key>CopilotPageContext</key>
 	<false/>
+	<key>DefaultBrowserSettingEnabled</key>
+	<false/>
 	<key>DefaultSearchProviderEnabled</key>
 	<true/>
 	<key>DefaultSearchProviderName</key>
 	<string>Google</string>
 	<key>DefaultSearchProviderSearchURL</key>
 	<string>https://www.google.com/search?q={searchTerms}</string>
+	<key>DiagnosticData</key>
+	<integer>0</integer>
 	<key>DiskCacheSize</key>
 	<integer>536870912</integer>
-	<key>EdgeAdminCenterEnabled</key>
-	<false/>
 	<key>EdgeAssetDeliveryServiceEnabled</key>
 	<false/>
 	<key>EdgeAutofillMlEnabled</key>
@@ -86,8 +88,12 @@
 	<false/>
 	<key>NewTabPageHideDefaultTopSites</key>
 	<true/>
+	<key>NewTabPagePrerenderEnabled</key>
+	<false/>
 	<key>NewTabPageSearchBox</key>
 	<string>redirect</string>
+	<key>PasswordGeneratorEnabled</key>
+	<false/>
 	<key>PasswordManagerEnabled</key>
 	<false/>
 	<key>PaymentMethodQueryEnabled</key>
@@ -131,6 +137,12 @@
 	<key>ShowPDFDefaultRecommendationsEnabled</key>
 	<false/>
 	<key>ShowRecommendationsEnabled</key>
+	<false/>
+	<key>SmartScreenDnsRequestsEnabled</key>
+	<false/>
+	<key>SmartScreenEnabled</key>
+	<false/>
+	<key>SmartScreenPuaEnabled</key>
 	<false/>
 	<key>SplitScreenEnabled</key>
 	<false/>

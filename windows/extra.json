@@ -1,4 +1,14 @@
 {
+  "DiagnosticData": 0,
+  "BackgroundModeEnabled": false,
+  "DefaultBrowserSettingEnabled": false,
+  "DefaultBrowserSettingsCampaignEnabled": false,
+  "NewTabPagePrerenderEnabled": false,
+  "PasswordGeneratorEnabled": false,
+  "RoamingProfileSupportEnabled": false,
+  "SpotlightExperiencesAndRecommendationsEnabled": false,
+  "SmartScreenForTrustedDownloadsEnabled": false,
+
   "StartupBoostEnabled": 0,
   "EdgeCollectionsEnabled": 0,
   "SideSearchEnabled": 0,

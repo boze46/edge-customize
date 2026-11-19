@@ -12,9 +12,9 @@ Microsoft Edge 去臃肿配置，基于官方 Managed Policy 机制，覆盖 Win
 | Linux | `linux/managed.json` | `/etc/opt/edge/policies/managed/debloat.json` |
 | macOS | `macos/com.microsoft.Edge.plist` | `com.microsoft.Edge` 偏好域 |
 
-三个平台同一份策略集合：`linux/managed.json` 是唯一手改的源，macOS plist 直接由它生成，
-Windows .reg 由它加上 `windows/extra.json`（22 条 Windows 专属策略）生成。
-改完策略跑一次 `python3 tools/build.py` 重新生成，不要手改 .reg 和 .plist。
+三个平台共用一套策略：`linux/managed.json` 是唯一手改的源，另外两个平台各有一份补充
+（`windows/extra.json` 33 条、`macos/extra.json` 4 条，都是 Linux 不认但该平台官方支持的）。
+改完策略跑一次 `python3 tools/build.py` 重新生成 `.reg` 和 `.plist`，不要手改这两份。
 
 ## 安装
 
@@ -86,6 +86,7 @@ killall cfprefsd
 | 购物与广告 | 购物助手、优惠券、Acrobat 订阅按钮、PDF 推荐、推荐内容、Insider 推广 |
 | 推销 | 首次运行引导、导入向导、关闭多标签确认 |
 | 后台 | 网络预测预取、性能检测器、磁盘缓存限制 512MB |
+| 安全 | SmartScreen 关闭（`SmartScreenEnabled`）、SmartScreen DNS 请求、PUA 拦截 |
 | 密码 | 密码管理器（`PasswordManagerEnabled`）、银行卡与会员卡自动填充 |
 | 企业噪音 | 管理后台、MAM、Web 转浏览器登录 |
 
@@ -100,11 +101,11 @@ killall cfprefsd
    定义，不是 bug。想改回某一项，删掉文件里对应行再重新加载。
 2. **默认搜索引擎被强制为 Google**（`DefaultSearchProvider*`）。要换 Bing 或
    DuckDuckGo，改 `DefaultSearchProviderName` 和 `DefaultSearchProviderSearchURL` 两行。
-3. **下载弹窗和 Safe Browsing 不在这份配置里**。`SafeBrowsingProtectionLevel`、
-   `SafeBrowsingDeepScanningEnabled`、`SafeBrowsingSurveysEnabled` 三条在 Edge 157
-   已被移除，写进去只会让 `edge://policy` 报「错误」。要关掉「不常下载，可能有害」
-   的提示，只能手动去 `edge://settings/privacy` → 「安全性」关闭
-   **Microsoft Defender SmartScreen**，这是 UI 层唯一开关，没有替代策略。
+3. **SmartScreen 完全关闭**（`SmartScreenEnabled: false`）。下载文件的信誉检查、钓鱼网站
+   拦截都不再生效，Edge 不会再拦任何东西。这是关掉「不常下载，可能有害」弹窗的唯一策略
+   （旧名 `SafeBrowsingProtectionLevel` 已废弃）。想少弹窗又保住外网防护的话，删掉这一行，
+   改用 `SmartScreenForTrustedDownloadsEnabled: false`——只跳过内网和本地来源的检查，
+   Windows 版已经包含它。
 4. **密码管理器关闭**，配套的是外部密码管理器（Bitwarden / KeePassXC 之类）。
    地址和银行卡自动填充仍然可用。
 5. **未写 `HttpsOnlyMode`**：强制 HTTPS 会让内网 HTTP 站点每次手点继续。
@@ -112,29 +113,47 @@ killall cfprefsd
 6. **未写 `EdgeDefaultProfileEnabled`**：这一条在原项目里被作者标注为可能清空
    浏览器 profile，收益又极小，任何平台都不建议加。
 
-## 已失效、不要再加的策略
+## 平台差异与策略改名
 
-Edge 157 已经移除下面这些。写进策略文件只会在 `edge://policy` 里报「错误」，
-不会生效，也不会报错到影响其它策略。原项目里还留着它们，是因为那两份配置
-最后维护到 2024 年。
+微软的策略文档只列 Windows / macOS / Android / iOS 四栏，**Linux 从来不在里面**，
+所以 Linux 的集合只能靠 `edge://policy` 实测确认。实测下来有 12 条在 Linux 上报「错误」，
+原因分三类：
 
-| 策略 | 原本想做的事 |
+**一、Edge 把 SafeBrowsing 系列整体改名为 SmartScreen**
+
+| 旧名（已废弃） | 新名（本文档使用） |
 |---|---|
-| `DiagnosticData` | 关闭诊断数据上报 |
-| `MetricsReportingEnabled` | 关闭使用统计上报 |
-| `SafeBrowsingProtectionLevel` | 关闭 Safe Browsing 下载与站点拦截 |
-| `SafeBrowsingDeepScanningEnabled` | 关闭下载文件深度扫描 |
-| `SafeBrowsingSurveysEnabled` | 关闭 Safe Browsing 调查问卷 |
-| `BackgroundModeEnabled` | 关闭后不再后台驻留 |
-| `DefaultBrowserSettingEnabled` | 关闭默认浏览器提示 |
-| `DefaultBrowserSettingsCampaignEnabled` | 关闭默认浏览器推广活动 |
-| `NewTabPagePrerenderEnabled` | 关闭新标签页预渲染 |
-| `PasswordGeneratorEnabled` | 关闭密码生成器 |
-| `RoamingProfileSupportEnabled` | 关闭漫游配置 |
-| `SpotlightExperiencesAndRecommendationsEnabled` | 关闭 Spotlight 推荐 |
+| `SafeBrowsingProtectionLevel` | `SmartScreenEnabled` |
+| `SafeBrowsingAllowlistDomains` | `SmartScreenAllowListDomains` |
+| `SafeBrowsingForTrustedSourcesEnabled` | `SmartScreenForTrustedDownloadsEnabled` |
+| `SafeBrowsingDeepScanningEnabled` | 无对应，功能已并入 SmartScreen |
+| `SafeBrowsingSurveysEnabled` | 无对应，已移除 |
 
-判断一个策略还活着没有：`edge://policy` 列表里**带文档链接**的才是当前版本认识的；
-只有裸名字、状态显示「错误」、点不开文档的，都是已废弃。
+**二、官方标注 OBSOLETE，全平台失效**
+
+- `MetricsReportingEnabled` —— Windows/macOS 77-88，Edge 88 之后不再生效。
+
+**三、Linux 不支持，但 Windows / macOS 依然有效**
+
+这 8 条放在各自的 `extra.json` 里，Linux 版本不含：
+
+| 策略 | Windows | macOS | 作用 |
+|---|---|---|---|
+| `DiagnosticData` | ≥122 | ≥86 | 关闭诊断数据上报 |
+| `BackgroundModeEnabled` | ≥77 | — | 关闭后不再后台驻留 |
+| `DefaultBrowserSettingEnabled` | ≥77 | ≥77 | 关闭默认浏览器提示 |
+| `DefaultBrowserSettingsCampaignEnabled` | ≥113 | — | 关闭默认浏览器推广活动 |
+| `NewTabPagePrerenderEnabled` | ≥85 | ≥85 | 关闭新标签页预渲染 |
+| `PasswordGeneratorEnabled` | ≥93 | ≥93 | 关闭密码生成器 |
+| `RoamingProfileSupportEnabled` | ≥85 | — | 关闭漫游配置 |
+| `SpotlightExperiencesAndRecommendationsEnabled` | ≥86 | — | 关闭 Spotlight 推荐 |
+| `SmartScreenForTrustedDownloadsEnabled` | ≥78 | — | 内网/本地来源的下载跳过信誉检查 |
+
+此外 `EdgeAdminCenterEnabled` 在 Linux 上实测生效，但官方文档页 404，查不到另外两个平台
+的支持情况，所以只在 Linux 版里保留。
+
+判断一个策略在某平台活不活：`edge://policy` 列表里**带文档链接**的才是当前版本认识的；
+只有裸名字、状态「错误」、点不开文档的，就是该平台不支持。
 
 ## 三条命令查状态
 
