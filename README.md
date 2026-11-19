@@ -85,7 +85,10 @@ killall cfprefsd
 | 侧栏与集成 | 侧边栏、侧栏搜索、分屏、Drop、迷你菜单、Office 快链、分享、钱包、朗读 |
 | 购物与广告 | 购物助手、优惠券、Acrobat 订阅按钮、PDF 推荐、推荐内容、Insider 推广 |
 | 推销 | 首次运行引导、导入向导、关闭多标签确认 |
-| 后台 | 网络预测预取、性能检测器、磁盘缓存限制 512MB |
+| 后台与内存 | 网络预测预取、性能检测器、磁盘缓存限制 512MB、标签页休眠 30 分钟、内存紧张时自动丢弃休眠标签 |
+| 网络 | 禁用 QUIC、关闭 Edge 内置 DoH（让系统/代理的 DNS 分流接管） |
+| 站点权限 | 定位与传感器默认阻止 |
+| 开发工具 | 显式允许 DevTools（`DeveloperToolsAvailability: 1`），防止被误设禁用 |
 | 安全 | SmartScreen 关闭（`SmartScreenEnabled`）、SmartScreen DNS 请求、PUA 拦截 |
 | 密码 | 密码管理器（`PasswordManagerEnabled`）、银行卡与会员卡自动填充 |
 | 企业噪音 | 管理后台、MAM、Web 转浏览器登录 |

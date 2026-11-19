@@ -12,6 +12,8 @@
 	<false/>
 	<key>AskBeforeCloseEnabled</key>
 	<false/>
+	<key>AutoDiscardSleepingTabsEnabled</key>
+	<true/>
 	<key>AutoImportAtFirstRun</key>
 	<integer>4</integer>
 	<key>AutofillCreditCardEnabled</key>
@@ -32,16 +34,24 @@
 	<false/>
 	<key>DefaultBrowserSettingEnabled</key>
 	<false/>
+	<key>DefaultGeolocationSetting</key>
+	<integer>2</integer>
 	<key>DefaultSearchProviderEnabled</key>
 	<true/>
 	<key>DefaultSearchProviderName</key>
 	<string>Google</string>
 	<key>DefaultSearchProviderSearchURL</key>
 	<string>https://www.google.com/search?q={searchTerms}</string>
+	<key>DefaultSensorsSetting</key>
+	<integer>2</integer>
+	<key>DeveloperToolsAvailability</key>
+	<integer>1</integer>
 	<key>DiagnosticData</key>
 	<integer>0</integer>
 	<key>DiskCacheSize</key>
 	<integer>536870912</integer>
+	<key>DnsOverHttpsMode</key>
+	<string>off</string>
 	<key>EdgeAssetDeliveryServiceEnabled</key>
 	<false/>
 	<key>EdgeAutofillMlEnabled</key>
@@ -55,6 +65,8 @@
 	<key>EdgeShoppingAssistantEnabled</key>
 	<false/>
 	<key>EdgeWalletEtreeEnabled</key>
+	<false/>
+	<key>EnableMediaRouter</key>
 	<false/>
 	<key>ExperimentationAndConfigurationServiceControl</key>
 	<integer>1</integer>
@@ -110,6 +122,8 @@
 	<false/>
 	<key>QRCodeGeneratorEnabled</key>
 	<false/>
+	<key>QuicAllowed</key>
+	<false/>
 	<key>QuickSearchShowMiniMenu</key>
 	<false/>
 	<key>QuickViewOfficeFilesEnabled</key>
@@ -138,6 +152,10 @@
 	<false/>
 	<key>ShowRecommendationsEnabled</key>
 	<false/>
+	<key>SleepingTabsEnabled</key>
+	<true/>
+	<key>SleepingTabsTimeout</key>
+	<integer>1800</integer>
 	<key>SmartScreenDnsRequestsEnabled</key>
 	<false/>
 	<key>SmartScreenEnabled</key>
