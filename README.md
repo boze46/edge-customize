@@ -94,7 +94,7 @@ killall cfprefsd
 | 分类 | 内容 |
 |---|---|
 | 遥测 | 个性化上报、第三方搜索遥测、资产下发、实验流量、Do Not Track、严格跟踪防护 |
-| AI | Copilot 全部形态（含页面上下文、Entra、365 图标、历史 AI 搜索）、侧边栏 Copilot、Compose、本地 AI 模型下载、AI 主题、AI 自动填充 |
+| AI | Copilot 全部形态（`AllowBrowsingWithCopilot` 总开关、Copilot 版新标签页、地址栏建议、代操作浏览器、页面上下文、Entra、365 图标、历史 AI 搜索）、侧边栏 Copilot、Compose、本地 AI 模型下载、AI 主题、AI 自动填充 |
 | 新标签页 | 新闻与内容流、Bing Chat、快捷链接、应用启动器、推荐与推广、Microsoft Rewards、游戏菜单 |
 | 侧栏与集成 | 侧边栏、侧栏搜索、分屏、Drop、迷你菜单、Office 快链、分享、钱包、朗读 |
 | 购物与广告 | 购物助手、优惠券、Acrobat 订阅按钮、PDF 推荐、推荐内容、Insider 推广 |
@@ -104,7 +104,7 @@ killall cfprefsd
 | 站点权限 | 定位与传感器默认阻止 |
 | 开发工具 | 显式允许 DevTools（`DeveloperToolsAvailability: 1`），防止被误设禁用 |
 | 安全 | SmartScreen 关闭（`SmartScreenEnabled`）、SmartScreen DNS 请求、PUA 拦截 |
-| 密码 | 密码管理器（`PasswordManagerEnabled`）、银行卡与会员卡自动填充 |
+| 密码与填充 | 密码管理器（`PasswordManagerEnabled`）、银行卡与会员卡自动填充、地址自动填充、从 Chrome 导入支付信息与表单数据 |
 | 企业噪音 | 管理后台、MAM、Web 转浏览器登录 |
 
 **刻意保留**：Microsoft 账号登录与跨设备同步、地址自动填充、远程调试（`edge://inspect`）、
