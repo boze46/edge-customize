@@ -18,8 +18,6 @@
 	<false/>
 	<key>AutofillMembershipsEnabled</key>
 	<false/>
-	<key>BackgroundModeEnabled</key>
-	<false/>
 	<key>BingAdsSuppression</key>
 	<true/>
 	<key>BrowserGuestModeEnabled</key>
@@ -32,18 +30,12 @@
 	<true/>
 	<key>CopilotPageContext</key>
 	<false/>
-	<key>DefaultBrowserSettingEnabled</key>
-	<false/>
-	<key>DefaultBrowserSettingsCampaignEnabled</key>
-	<false/>
 	<key>DefaultSearchProviderEnabled</key>
 	<true/>
 	<key>DefaultSearchProviderName</key>
 	<string>Google</string>
 	<key>DefaultSearchProviderSearchURL</key>
 	<string>https://www.google.com/search?q={searchTerms}</string>
-	<key>DiagnosticData</key>
-	<integer>0</integer>
 	<key>DiskCacheSize</key>
 	<integer>536870912</integer>
 	<key>EdgeAdminCenterEnabled</key>
@@ -76,8 +68,6 @@
 	<false/>
 	<key>MAMEnabled</key>
 	<false/>
-	<key>MetricsReportingEnabled</key>
-	<false/>
 	<key>Microsoft365CopilotChatIconEnabled</key>
 	<false/>
 	<key>MicrosoftEdgeInsiderPromotionEnabled</key>
@@ -96,12 +86,8 @@
 	<false/>
 	<key>NewTabPageHideDefaultTopSites</key>
 	<true/>
-	<key>NewTabPagePrerenderEnabled</key>
-	<false/>
 	<key>NewTabPageSearchBox</key>
 	<string>redirect</string>
-	<key>PasswordGeneratorEnabled</key>
-	<false/>
 	<key>PasswordManagerEnabled</key>
 	<false/>
 	<key>PaymentMethodQueryEnabled</key>
@@ -126,14 +112,6 @@
 	<false/>
 	<key>ResolveNavigationErrorsUseWebService</key>
 	<false/>
-	<key>RoamingProfileSupportEnabled</key>
-	<false/>
-	<key>SafeBrowsingDeepScanningEnabled</key>
-	<false/>
-	<key>SafeBrowsingProtectionLevel</key>
-	<integer>0</integer>
-	<key>SafeBrowsingSurveysEnabled</key>
-	<false/>
 	<key>SeamlessWebToBrowserSignInEnabled</key>
 	<false/>
 	<key>SearchForImageEnabled</key>
@@ -155,8 +133,6 @@
 	<key>ShowRecommendationsEnabled</key>
 	<false/>
 	<key>SplitScreenEnabled</key>
-	<false/>
-	<key>SpotlightExperiencesAndRecommendationsEnabled</key>
 	<false/>
 	<key>TextPredictionEnabled</key>
 	<false/>

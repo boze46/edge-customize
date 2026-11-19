@@ -1,0 +1,27 @@
+{
+  "StartupBoostEnabled": 0,
+  "EdgeCollectionsEnabled": 0,
+  "SideSearchEnabled": 0,
+  "SigninInterceptionEnabled": 0,
+  "ImplicitSignInEnabled": 0,
+  "WebWidgetAllowed": 0,
+  "SearchbarAllowed": 0,
+  "SearchbarIsEnabledOnStartup": 0,
+  "StandaloneHubsSidebarEnabled": 0,
+  "EdgeWalletCheckoutEnabled": 0,
+  "ImportOnEachLaunch": 0,
+  "LiveCaptionsAllowed": 0,
+  "LiveVideoTranslationEnabled": 0,
+  "LocalBrowserDataShareEnabled": 0,
+  "MouseGestureEnabled": 0,
+  "PinningWizardAllowed": 0,
+  "RelatedWebsiteSetsEnabled": 0,
+  "ShoppingListEnabled": 0,
+  "UploadFromPhoneEnabled": 0,
+  "AccessCodeCastEnabled": 0,
+  "DesktopSharingHubEnabled": 0,
+  "HideInternetExplorerRedirectUXForIncompatibleSitesEnabled": 1,
+
+  "Edge3PSerpTelemetryEnabled": 0,
+  "UrlKeyedAnonymizedDataCollectionEnabled": 0
+}
