@@ -37,15 +37,25 @@ reg import edge-debloat.reg
 ### Linux
 
 ```bash
-sudo install -Dm644 linux/managed.json /etc/opt/edge/policies/managed/debloat.json
+sudo install -Dm644 linux/managed.json /etc/opt/edge/policies/recommended/debloat.json
 ```
 
 重启 Edge 后打开 `edge://policy`，点「重新加载政策」。
 
-路径 `/etc/opt/edge/policies/managed/` 是 Linux 版 Edge 编译进去的固定位置，不用改。
-文件必须是 `644`，目录 `755`。
+路径 `/etc/opt/edge/policies/` 是 Linux 版 Edge 编译进去的固定位置，不用改。文件必须是 `644`，目录 `755`。
 
-撤销：`sudo rm /etc/opt/edge/policies/managed/debloat.json`，重启 Edge。
+**子目录选 `recommended/` 还是 `managed/`，决定两件事：**
+
+| | `managed/` | `recommended/` |
+|---|---|---|
+| 设置页「由你的组织管理」 | 显示 | **不显示** |
+| 设置项 | 变灰、锁定 | 显示为默认值，用户可改 |
+| 防误改 / 防恶意软件 | 有 | 无 |
+| 生效条件 | 强制 | 仅当用户没手动设过该项 |
+
+`recommended/` 的代价是这些值会变成「用户值的默认值」——你在设置里手动改过的项以你的值为准，下次启动也不会被纠正。想要锁定就换成 `managed/`。
+
+撤销：`sudo rm /etc/opt/edge/policies/recommended/debloat.json`，重启 Edge。
 
 ### macOS
 
