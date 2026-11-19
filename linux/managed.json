@@ -10,7 +10,6 @@
   "QuicAllowed": false,
   "DnsOverHttpsMode": "off",
   "AddressBarTrendingSuggestEnabled": false,
-
   "SmartScreenEnabled": false,
   "SmartScreenDnsRequestsEnabled": false,
   "SmartScreenPuaEnabled": false,
@@ -66,7 +65,6 @@
   "DiskCacheSize": 536870912,
   "PerformanceDetectorEnabled": false,
   "ExtensionsPerformanceDetectorEnabled": false,
-
   "DefaultGeolocationSetting": 2,
   "DefaultSensorsSetting": 2,
   "PasswordManagerEnabled": false,
@@ -81,10 +79,16 @@
   "QRCodeGeneratorEnabled": false,
   "SearchForImageEnabled": false,
   "VisualSearchEnabled": false,
-
   "DeveloperToolsAvailability": 1,
   "EdgeAdminCenterEnabled": false,
   "MAMEnabled": false,
   "WebToBrowserSignInEnabled": false,
-  "SeamlessWebToBrowserSignInEnabled": false
+  "SeamlessWebToBrowserSignInEnabled": false,
+  "AllowBrowsingWithCopilot": false,
+  "CopilotNewTabPageEnabled": false,
+  "CopilotAddressBarSuggestionsEnabled": false,
+  "CopilotCoworkToolActionsEnabled": false,
+  "ImportPaymentInfo": false,
+  "ImportAutofillFormData": false,
+  "AutofillAddressEnabled": false
 }

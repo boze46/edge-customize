@@ -6,6 +6,8 @@
 	<false/>
 	<key>AddressBarTrendingSuggestEnabled</key>
 	<false/>
+	<key>AllowBrowsingWithCopilot</key>
+	<false/>
 	<key>AllowGamesMenu</key>
 	<false/>
 	<key>AlternateErrorPagesEnabled</key>
@@ -16,6 +18,8 @@
 	<true/>
 	<key>AutoImportAtFirstRun</key>
 	<integer>4</integer>
+	<key>AutofillAddressEnabled</key>
+	<false/>
 	<key>AutofillCreditCardEnabled</key>
 	<false/>
 	<key>AutofillMembershipsEnabled</key>
@@ -30,6 +34,12 @@
 	<false/>
 	<key>ConfigureDoNotTrack</key>
 	<true/>
+	<key>CopilotAddressBarSuggestionsEnabled</key>
+	<false/>
+	<key>CopilotCoworkToolActionsEnabled</key>
+	<false/>
+	<key>CopilotNewTabPageEnabled</key>
+	<false/>
 	<key>CopilotPageContext</key>
 	<false/>
 	<key>DefaultBrowserSettingEnabled</key>
@@ -79,6 +89,10 @@
 	<key>HideFirstRunExperience</key>
 	<true/>
 	<key>HubsSidebarEnabled</key>
+	<false/>
+	<key>ImportAutofillFormData</key>
+	<false/>
+	<key>ImportPaymentInfo</key>
 	<false/>
 	<key>MAMEnabled</key>
 	<false/>
